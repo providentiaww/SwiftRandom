@@ -17,7 +17,7 @@
             productRefGroup = ____Products_;
             projectDirPath = '';
             projectRoot = '';
-            targets = (______Target_SwiftRandom);
+            targets = (______Target_SwiftRandom, ______Target_SwiftRandomTests);
         };
         '__PBXFileRef_Package.swift' = {
             isa = PBXFileReference;
@@ -95,6 +95,75 @@ CompilePhase_SwiftRandom, ___LinkPhase_SwiftRandom);
             isa = PBXTargetDependency;
             target = ______Target_SwiftRandom;
         };
+        '__PBXFileRef_Tests/SwiftRandomTests/SwiftRandomTests.swift' = {
+            name = 'SwiftRandomTests.swift';
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Tests/SwiftRandomTests/SwiftRandomTests.swift';
+            sourceTree = '<group>';
+        };
+        _______Group_SwiftRandomTests = {
+            isa = PBXGroup;
+            name = 'SwiftRandomTests';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Tests/SwiftRandomTests/SwiftRandomTests.swift');
+        };
+        ______Target_SwiftRandomTests = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_SwiftRandomTests;
+            buildPhases = (
+CompilePhase_SwiftRandomTests, ___LinkPhase_SwiftRandomTests);
+            buildRules = ();
+            dependencies = (__Dependency_SwiftRandom);
+            name = 'SwiftRandomTests';
+            productName = SwiftRandomTests;
+            productReference = _____Product_SwiftRandomTests;
+            productType = 'com.apple.product-type.bundle.unit-test';
+        };
+        _____Product_SwiftRandomTests = {
+            isa = PBXFileReference;
+            explicitFileType = 'compiled.mach-o.wrapper.cfbundle';
+            path = 'SwiftRandomTests.xctest';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_SwiftRandomTests = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Tests/SwiftRandomTests/SwiftRandomTests.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Tests/SwiftRandomTests/SwiftRandomTests.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Tests/SwiftRandomTests/SwiftRandomTests.swift';
+        };
+        ___LinkPhase_SwiftRandomTests = {
+            isa = PBXFrameworksBuildPhase;
+            files = (_LinkFileRef_SwiftRandom_via_SwiftRandomTests);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _LinkFileRef_SwiftRandom_via_SwiftRandomTests = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_SwiftRandom;
+        };
+        _______Confs_SwiftRandomTests = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_SwiftRandomTests, _ReleaseConf_SwiftRandomTests);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_SwiftRandomTests = {
+            isa = XCBuildConfiguration;
+            buildSettings = { EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES" ;  FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks" ;  INFOPLIST_FILE = "SwiftRandom.xcodeproj/SwiftRandomTests_Info.plist" ;  LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks" ;  LIBRARY_SEARCH_PATHS = "\"$(PROJECT_TEMP_DIR)/SymlinkLibs/\"" ;  OTHER_LDFLAGS = "\"$(inherited)\"" ;  OTHER_SWIFT_FLAGS = "\"$(inherited)\"" ;  SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE" ;  SWIFT_VERSION = "3.0" ; };
+            name = Debug;
+        };
+        _ReleaseConf_SwiftRandomTests = {
+            isa = XCBuildConfiguration;
+            buildSettings = { EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES" ;  FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks" ;  INFOPLIST_FILE = "SwiftRandom.xcodeproj/SwiftRandomTests_Info.plist" ;  LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks" ;  LIBRARY_SEARCH_PATHS = "\"$(PROJECT_TEMP_DIR)/SymlinkLibs/\"" ;  OTHER_LDFLAGS = "\"$(inherited)\"" ;  OTHER_SWIFT_FLAGS = "\"$(inherited)\"" ;  SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE" ;  SWIFT_VERSION = "3.0" ; };
+            name = Release;
+        };
+        __Dependency_SwiftRandomTests = {
+            isa = PBXTargetDependency;
+            target = ______Target_SwiftRandomTests;
+        };
         '__PBXFileRef_SwiftRandom.xcodeproj/Configs/Project.xcconfig' = {
             isa = PBXFileReference;
             lastKnownFileType = text.xcconfig;
@@ -125,9 +194,21 @@ CompilePhase_SwiftRandom, ___LinkPhase_SwiftRandom);
             name = Sources;
             sourceTree = '<group>';
         };
+        _______Tests_ = {
+            isa = PBXGroup;
+            children = (_______Group_SwiftRandomTests);
+            name = Tests;
+            sourceTree = '<group>';
+        };
+       TestProducts_ = {
+            isa = PBXGroup;
+            children = (_____Product_SwiftRandomTests);
+            name = Tests;
+            sourceTree = '<group>';
+        };
         ____Products_ = {
             isa = PBXGroup;
-            children = (_____Product_SwiftRandom);
+            children = (TestProducts_, _____Product_SwiftRandom);
             name = Products;
             sourceTree = '<group>';
         };

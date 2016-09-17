@@ -5,6 +5,10 @@
 //  Copyright (c) 2015 Furkan Yilmaz. All rights reserved.
 //
 
+// Swift 3 Server Side / SPM conversion by Jonathan Guthrie
+// @iamjono
+// http://github.com/iamjono
+
 import Foundation
 
 // each type has its own random
@@ -122,11 +126,11 @@ public extension ArraySlice {
     }
 }
 
-public extension NSURL {
+public extension URL {
     /// SwiftRandom extension
-    public static func random() -> NSURL {
-        let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
-        return NSURL(string: urlList.randomItem()!)!
+    public static func random() -> URL {
+        let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/", "http://imgur.com/", "https://www.youtube.com/"]
+        return URL(string: urlList.randomItem()!)!
     }
 }
 
@@ -150,11 +154,11 @@ public struct Randoms {
     }
 
     public static func randomInt32(range: Range<Int>) -> Int32 {
-				return Int32.random(range: range)
+		return Int32.random(range: range)
     }
 
     public static func randomInt32(lower: Int = 0, _ upper: Int = 100) -> Int32{
-        return Int32.random(lower: upper, lower)
+        return Int32.random(lower: lower, upper)
     }
 
     public static func randomPercentageisOver(percentage: Int) -> Bool {
@@ -182,8 +186,8 @@ public struct Randoms {
     }
 
 
-    public static func randomNSURL() -> NSURL {
-        return NSURL.random()
+    public static func randomURL() -> URL {
+        return URL.random()
     }
 
     //==========================================================================================================
@@ -238,16 +242,6 @@ public struct Randoms {
         return currencyList.randomItem()!
     }
 
-    public enum GravatarStyle: String {
-        case Standard
-        case MM
-        case Identicon
-        case MonsterID
-        case Wavatar
-        case Retro
-
-        static let allValues = [Standard, MM, Identicon, MonsterID, Wavatar, Retro]
-    }
 
 
 
