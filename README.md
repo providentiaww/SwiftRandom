@@ -128,7 +128,7 @@ func asMethods() {
 ``` swift
 .Package(
     url: "https://github.com/iamjono/SwiftRandom.git", 
-    majorVersion: 1, minor: 0
+    majorVersion: 0, minor: 2
     ),
 ```
 
