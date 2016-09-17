@@ -1,12 +1,20 @@
 SwiftRandom
 ==============
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftRandom.svg)](https://img.shields.io/cocoapods/v/SwiftRandom.svg)
+SwiftRandom is a tiny help suite for generating random data such as:
 
-SwiftRandom is a tiny help suite for generating random data such as
 * Random human stuff like: names, gender, titles, tags, conversations
-* Random data types like: Int, CGFloat, Bool, UIColor, NSDate, NSURL, element in Array
+* Random data types like: Int, CGFloat, Bool, Date, URL, element in Array
+
+Note the original client side Swift 2 repo can be found here:
+[https://github.com/thellimist/SwiftRandom](https://github.com/thellimist/SwiftRandom)
+
+## This Fork
+
+This fork is intended as a server side utility. 
+
+* It is Swift 3.0 and Swift Package Manager (SPM) ready.
+* Significant test coverage has also been added.
 
 ## Usage
 
@@ -19,10 +27,9 @@ func asExtension() {
 	Double.random()
 	Float.random(3.2, 4.5) // Random between 3.2-4.5
 	CGFloat.random()
-	NSDate.random()
-	NSDate.randomWithinDaysBeforeToday(7)
-	UIColor.random()
-	NSURL.random()
+	Date.random()
+	Date.randomWithinDaysBeforeToday(7)
+	URL.random()
 	
 	// Array Extensions
 	var someArray = ["hello", "world"]
@@ -69,13 +76,9 @@ func asMethods() {
 	// Example Output: 1997-02-01 15:27:08 +0000
 	Randoms.randomDate()
 
-	// Return UIColor. Alpha channel always 1.
-	// Example Output: UIDeviceRGBColorSpace 0.645737 0.126625 0.52535 1
-	Randoms.randomColor()
-
-	// Return random NSURL
+	// Return random URL
 	// Example Output: http://leagueoflegends.com/
-	Randoms.randomNSURL()
+	Randoms.randomURL()
 
 	// ==================== Fake Generators for Fake Datasources ==================== //
 
@@ -107,45 +110,32 @@ func asMethods() {
 	// Example Output: "EUR"
 	Randoms.randomCurrency()
 	
-	// Return random (non-existing) gravatar as UIImage?
-	// The image is optional in case of network issues
-	Randoms.randomGravatar { (image, error) -> Void in
-		// Handle the image/error
-	}
-	
-	// For consistance behaviour you can create custom Gravatar
-	Randoms.createGravatar(Randoms.GravatarStyle.Retro) { (image, error) -> Void in
-		// Handle the image/error
-	}
 }
 
 ```
 
 ###Requirements
 
-- Swift version 2.0
+- Swift version 3.0
 
 
 ## Installation
 
-### Install via Carthage
+### Install via Swift Package Manager
 
-* Create a `Cartfile` with the following specification and run `carthage update`.
+* Add the following to your `Package.swift` file:
+
+``` swift
+.Package(
+    url: "https://github.com/iamjono/SwiftRandom.git", 
+    majorVersion: 1, minor: 0
+    ),
+```
+
+Then, regenerate your Xcode project:
 
 ```
-github "thellimist/SwiftRandom" >= 0.1.7
-```
-
-* Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
-
-### Install via CocoaPods
-
-You can use [CocoaPods](http://cocoapods.org/) to install `SwiftRandom` by adding it to your `Podfile`:
-```ruby
-platform :ios, '8.0'
-use_frameworks!
-
-pod  'SwiftRandom'
+swift package generate-xcodeproj
 ```
 
 ### Install Manually
@@ -153,19 +143,8 @@ pod  'SwiftRandom'
 - Download and drop 'Randoms.swift' in your project.
 
 
-###Improvement
-- Feel free adding your own random data functions and sending pull requests.
-
-#####Possible features:
-- Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
-- Make OSX compatiable and add here: https://github.com/AndrewSB/awesome-osx
-- Random JSON
-- Random Gifs (Should not include gifs inside the project, should load it from web when needed)
-- Random Videos (Should not include videos inside the project, should load it from web when needed)
-- Implement `SwiftRandom` as a protocol any class can conform to (`Post.random()` would give you a random post)
-
 ###License
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
 ##Keywords
-random, swift, data, generator, faker, fake, gravatar
+random, swift, data, generator, faker, fake
