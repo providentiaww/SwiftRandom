@@ -1,5 +1,0 @@
-version: "Apple Swift version 3.0-dev (LLVM f54fa77021, Clang 0e6c928036, Swift 016bc24998)"
-options: "7307158f9aae80f5a1bb8a4d779e5f59"
-build_time: [527453120, 620753000]
-inputs:
-  "/Users/jonathanguthrie/Documents/development/3rd-Party-Projects/SwiftRandom/Sources/SwiftRandom/Randoms.swift": !dirty [527452927, 0]
