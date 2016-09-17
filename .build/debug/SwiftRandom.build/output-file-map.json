@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jonathanguthrie/Documents/development/3rd-Party-Projects/SwiftRandom/.build/debug/SwiftRandom.build/master.swiftdeps"
+  },
+  "/Users/jonathanguthrie/Documents/development/3rd-Party-Projects/SwiftRandom/Sources/SwiftRandom/Randoms.swift": {
+    "dependencies": "/Users/jonathanguthrie/Documents/development/3rd-Party-Projects/SwiftRandom/.build/debug/SwiftRandom.build/Randoms.d",
+    "object": "/Users/jonathanguthrie/Documents/development/3rd-Party-Projects/SwiftRandom/.build/debug/SwiftRandom.build/Randoms.swift.o",
+    "swiftmodule": "/Users/jonathanguthrie/Documents/development/3rd-Party-Projects/SwiftRandom/.build/debug/SwiftRandom.build/Randoms~partial.swiftmodule",
+    "swift-dependencies": "/Users/jonathanguthrie/Documents/development/3rd-Party-Projects/SwiftRandom/.build/debug/SwiftRandom.build/Randoms.swiftdeps"
+  }
+}
