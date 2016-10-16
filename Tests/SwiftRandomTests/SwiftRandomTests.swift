@@ -194,32 +194,33 @@ class SwiftRandomTests: XCTestCase {
 		XCTAssert(fakeCurrencies.contains(Randoms.randomCurrency()))
 	}
 
-	static var allTests = [
-		("testBool", testBool),
-		("testBoolStruct", testBoolStruct),
-		("testIntRange", testIntRange),
-		("testIntRangeLower", testIntRangeLower),
-		("testIntRangeStruct", testIntRangeStruct),
-		("testIntRangeLowerStruct", testIntRangeLowerStruct),
-		("testInt32Range", testInt32Range),
-		("testInt32RangeLower", testInt32RangeLower),
-		("testInt32RangeStruct", testInt32RangeStruct),
-		("testInt32RangeLowerStruct", testInt32RangeLowerStruct),
-		("testRandomPercentageisOverStruct", testRandomPercentageisOverStruct),
-		("testDoubleRangeLower", testDoubleRangeLower),
-		("testDoubleRangeLowerStruct", testDoubleRangeLowerStruct),
-		("testFloatRangeLower", testFloatRangeLower),
-		("testFloatRangeLowerStruct", testFloatRangeLowerStruct),
-		("testArray", testArray),
-		("testArraySlice", testArraySlice),
-		("testRandomFakeName", testRandomFakeName),
-		("testRandomFakeGender", testRandomFakeGender),
-		("testRandomFakeConversation", testRandomFakeConversation),
-		("testRandomFakeTitle", testRandomFakeTitle),
-		("testRandomFakeTag", testRandomFakeTag),
-		("testRandomFakeNameAndEnglishHonorific", testRandomFakeNameAndEnglishHonorific),
-		("testRandomFakeCity", testRandomFakeCity),
-		("testRandomFakeCurrency", testRandomFakeCurrency)
-	]
-
+	static var allTests : [(String, (SwiftRandomTests) -> () throws -> Void)] {
+		return [
+			("testBool", testBool),
+			("testBoolStruct", testBoolStruct),
+			("testIntRange", testIntRange),
+			("testIntRangeLower", testIntRangeLower),
+			("testIntRangeStruct", testIntRangeStruct),
+			("testIntRangeLowerStruct", testIntRangeLowerStruct),
+			("testInt32Range", testInt32Range),
+			("testInt32RangeLower", testInt32RangeLower),
+			("testInt32RangeStruct", testInt32RangeStruct),
+			("testInt32RangeLowerStruct", testInt32RangeLowerStruct),
+			("testRandomPercentageisOverStruct", testRandomPercentageisOverStruct),
+			("testDoubleRangeLower", testDoubleRangeLower),
+			("testDoubleRangeLowerStruct", testDoubleRangeLowerStruct),
+			("testFloatRangeLower", testFloatRangeLower),
+			("testFloatRangeLowerStruct", testFloatRangeLowerStruct),
+			("testArray", testArray),
+			("testArraySlice", testArraySlice),
+			("testRandomFakeName", testRandomFakeName),
+			("testRandomFakeGender", testRandomFakeGender),
+			("testRandomFakeConversation", testRandomFakeConversation),
+			("testRandomFakeTitle", testRandomFakeTitle),
+			("testRandomFakeTag", testRandomFakeTag),
+			("testRandomFakeNameAndEnglishHonorific", testRandomFakeNameAndEnglishHonorific),
+			("testRandomFakeCity", testRandomFakeCity),
+			("testRandomFakeCurrency", testRandomFakeCurrency)
+		]
+	}
 }
