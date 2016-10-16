@@ -103,18 +103,7 @@ class SwiftRandomTests: XCTestCase {
 		XCTAssert(test >= 0.01 && test <= 4.02)
 	}
 
-
-	// CGFloat
-	func testCGFloatRangeLower() {
-		let test = CGFloat.random(lower: 0.01, 4.02)
-		XCTAssert(test >= 0.01 && test <= 4.02)
-	}
-	func testCGFloatRangeLowerStruct() {
-		let test = Randoms.randomCGFloat(lower: 0.01, 4.02)
-//		print("testCGFloatRangeLowerStruct: \(test)")
-		XCTAssert(test >= 0.01 && test <= 4.02)
-	}
-
+	
 
 	// Date
 	func testDate() {

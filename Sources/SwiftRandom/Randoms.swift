@@ -66,18 +66,6 @@ public extension Float {
     }
 }
 
-public extension CGFloat {
-    /// SwiftRandom extension
-    public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
-		let rand = URandom()
-		var fl = CGFloat(Float(rand.int32))
-		if fl < 0 {
-			fl = fl * -1
-		}
-		return CGFloat(fl / CGFloat(UINT32_MAX)) * (upper - lower) + lower
-    }
-}
-
 public extension Date {
     /// SwiftRandom extension
     public static func randomWithinDaysBeforeToday(days: Int) -> Date {
@@ -192,10 +180,6 @@ public struct Randoms {
 
     public static func randomFloat(lower: Float = 0, _ upper: Float = 100) -> Float {
         return Float.random(lower: upper, lower)
-    }
-
-    public static func randomCGFloat(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
-        return CGFloat.random(lower: upper, lower)
     }
 
     public static func randomDateWithinDaysBeforeToday(days: Int) -> Date {
