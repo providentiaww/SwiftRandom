@@ -28,7 +28,9 @@ public extension Int {
 
     /// SwiftRandom extension
     public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
-        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+		let rand = URandom()
+		let val = abs(rand.int % Int(upper - lower + 1))
+		return lower + val
     }
 }
 
@@ -42,29 +44,33 @@ public extension Int32 {
     ///
     /// - note: Using `Int` as parameter type as we usually just want to write `Int32.random(13, 37)` and not `Int32.random(Int32(13), Int32(37))`
     public static func random(lower: Int = 0, _ upper: Int = 100) -> Int32 {
-        let r = arc4random_uniform(UInt32(Int64(upper) - Int64(lower)))
-        return Int32(Int64(r) + Int64(lower))
+		let rand = URandom()
+		let val = abs(rand.int32 % Int32(upper - lower + 1))
+        return Int32(Int64(val) + Int64(lower))
     }
 }
 
 public extension Double {
     /// SwiftRandom extension
     public static func random(lower: Double = 0, _ upper: Double = 100) -> Double {
-        return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+		let rand = URandom()
+        return (abs(Double(rand.int32)) / 0xFFFFFFFF) * (upper - lower) + lower
     }
 }
 
 public extension Float {
     /// SwiftRandom extension
     public static func random(lower: Float = 0, _ upper: Float = 100) -> Float {
-        return (Float(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+		let rand = URandom()
+        return (abs(Float(rand.int32)) / 0xFFFFFFFF) * (upper - lower) + lower
     }
 }
 
 public extension CGFloat {
     /// SwiftRandom extension
     public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
-        return CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * (upper - lower) + lower
+		let rand = URandom()
+		return CGFloat(abs(CGFloat(Float(rand.int32))) / CGFloat(UINT32_MAX)) * (upper - lower) + lower
     }
 }
 
@@ -72,13 +78,20 @@ public extension Date {
     /// SwiftRandom extension
     public static func randomWithinDaysBeforeToday(days: Int) -> Date {
         let today = Date()
+		let rand = URandom()
 
         let gregorian = Calendar(identifier: Calendar.Identifier.gregorian)
 
-        let r1 = arc4random_uniform(UInt32(days))
-        let r2 = arc4random_uniform(UInt32(23))
-        let r3 = arc4random_uniform(UInt32(59))
-        let r4 = arc4random_uniform(UInt32(59))
+		//        let r1 = arc4random_uniform(UInt32(days))
+		//        let r2 = arc4random_uniform(UInt32(23))
+		//        let r3 = arc4random_uniform(UInt32(59))
+		//        let r4 = arc4random_uniform(UInt32(59))
+		let r1 = abs(rand.int % Int(days))
+		let r2 = abs(rand.int % Int(32))
+		let r3 = abs(rand.int % Int(59))
+		let r4 = abs(rand.int % Int(59))
+
+
 
         var offsetComponents = DateComponents()
         offsetComponents.day = Int(r1) * -1
@@ -95,7 +108,9 @@ public extension Date {
 
     /// SwiftRandom extension
     public static func random() -> Date {
-        let randomTime = TimeInterval(arc4random_uniform(UInt32.max))
+//        let randomTime = TimeInterval(arc4random_uniform(UInt32.max))
+		let rand = URandom()
+		let randomTime = TimeInterval(abs(rand.int % Int(Int32.max)))
         return Date(timeIntervalSince1970: randomTime)
     }
 
@@ -109,7 +124,9 @@ public extension Array {
             return nil
         }
 
-        let index = Int(arc4random_uniform(UInt32(self.count)))
+//		let index = Int(arc4random_uniform(UInt32(self.count)))
+		let rand = URandom()
+		let index = Int(abs(rand.int % Int(self.count)))
         return self[index]
     }
 }

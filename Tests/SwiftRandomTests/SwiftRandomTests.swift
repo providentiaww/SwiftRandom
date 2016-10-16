@@ -28,20 +28,24 @@ class SwiftRandomTests: XCTestCase {
 
 	// Int
 	func testIntRange() {
-		let test = Int.random(range: 5..<10)
-		XCTAssert(test >= 5 && test <= 10)
+		let test = Int.random(range: 4..<10)
+		//print("testIntRange: \(test)")
+		XCTAssert(test >= 4 && test <= 10)
 	}
 	func testIntRangeLower() {
 		let test = Int.random(lower: 0, 4)
+		//print("testIntRangeLower: \(test)")
 		XCTAssert(test >= 0 && test <= 4)
 	}
 	func testIntRangeStruct() {
 		let test = Randoms.randomInt(range: 5..<10)
+		//print("testIntRangeStruct: \(test)")
 		XCTAssert(test >= 5 && test <= 10)
 	}
 	func testIntRangeLowerStruct() {
-		let test = Randoms.randomInt(lower: 0, 4)
-		XCTAssert(test >= 0 && test <= 4)
+		let test = Randoms.randomInt(lower: 1, 4)
+		//print("testIntRangeLowerStruct: \(test)")
+		XCTAssert(test >= 1 && test <= 4)
 	}
 
 
@@ -52,20 +56,24 @@ class SwiftRandomTests: XCTestCase {
 	}
 	func testInt32RangeLower() {
 		let test = Int32.random(lower: 0, 4)
+		//print(test)
 		XCTAssert(test >= 0 && test <= 4)
 	}
 	func testInt32RangeStruct() {
 		let test = Randoms.randomInt32(range: 5..<10)
+		//print(test)
 		XCTAssert(test >= 5 && test <= 10)
 	}
 	func testInt32RangeLowerStruct() {
 		let test = Randoms.randomInt32(lower: 0, 4)
+		//print(test)
 		XCTAssert(test >= 0 && test <= 4)
 	}
 
 	// randomPercentageisOver
 	func testRandomPercentageisOverStruct() {
 		let test = Randoms.randomPercentageisOver(percentage: 0)
+		//print("testRandomPercentageisOverStruct: \(test)")
 		XCTAssert(test == true)
 	}
 
@@ -73,21 +81,25 @@ class SwiftRandomTests: XCTestCase {
 	// Double
 	func testDoubleRangeLower() {
 		let test = Double.random(lower: 0.01, 4.02)
+//		print("testDoubleRangeLower: \(test)")
 		XCTAssert(test >= 0.01 && test <= 4.02)
 	}
 
 	func testDoubleRangeLowerStruct() {
 		let test = Randoms.randomDouble(lower: 0.01, 4.02)
+//		print("testDoubleRangeLowerStruct: \(test)")
 		XCTAssert(test >= 0.01 && test <= 4.02)
 	}
 
 	// Float
 	func testFloatRangeLower() {
 		let test = Float.random(lower: 0.01, 4.02)
+//		print("testFloatRangeLower: \(test)")
 		XCTAssert(test >= 0.01 && test <= 4.02)
 	}
 	func testFloatRangeLowerStruct() {
 		let test = Randoms.randomFloat(lower: 0.01, 4.02)
+//		print("testFloatRangeLowerStruct: \(test)")
 		XCTAssert(test >= 0.01 && test <= 4.02)
 	}
 
@@ -99,6 +111,7 @@ class SwiftRandomTests: XCTestCase {
 	}
 	func testCGFloatRangeLowerStruct() {
 		let test = Randoms.randomCGFloat(lower: 0.01, 4.02)
+//		print("testCGFloatRangeLowerStruct: \(test)")
 		XCTAssert(test >= 0.01 && test <= 4.02)
 	}
 
@@ -110,8 +123,8 @@ class SwiftRandomTests: XCTestCase {
 	}
 	func testDateWithinDaysBeforeToday() {
 		let test = Date.randomWithinDaysBeforeToday(days: 2)
-		print("randomWithinDaysBeforeToday \(test)")
-		print("randomWithinDaysBeforeToday \(test.timeIntervalSinceNow)")
+//		print("randomWithinDaysBeforeToday \(test)")
+//		print("randomWithinDaysBeforeToday \(test.timeIntervalSinceNow)")
 		XCTAssert(test.timeIntervalSinceNow <= 86400) // 86400 is num seconds in a day
 	}
 
@@ -121,8 +134,8 @@ class SwiftRandomTests: XCTestCase {
 	}
 	func testDateWithinDaysBeforeTodayStruct() {
 		let test = Randoms.randomDateWithinDaysBeforeToday(days: 2)
-		print("randomWithinDaysBeforeToday \(test)")
-		print("randomWithinDaysBeforeToday \(test.timeIntervalSinceNow)")
+//		print("randomWithinDaysBeforeToday \(test)")
+//		print("randomWithinDaysBeforeToday \(test.timeIntervalSinceNow)")
 		XCTAssert(test.timeIntervalSinceNow <= 86400) // 86400 is num seconds in a day
 	}
 
