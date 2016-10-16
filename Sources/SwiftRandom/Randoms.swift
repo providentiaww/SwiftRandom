@@ -70,7 +70,10 @@ public extension CGFloat {
     /// SwiftRandom extension
     public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
 		let rand = URandom()
-		let fl = abs(CGFloat(Float(rand.int32)))
+		var fl = CGFloat(Float(rand.int32))
+		if fl < 0 {
+			fl = fl * -1
+		}
 		return CGFloat(fl / CGFloat(UINT32_MAX)) * (upper - lower) + lower
     }
 }
