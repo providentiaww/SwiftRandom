@@ -67,4 +67,5 @@ fastlane/test_output
 
 Packages/
 docs/
-/*.xcodeproj
+*.xcodeproj
+*.pbxproj
