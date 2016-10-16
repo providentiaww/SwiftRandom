@@ -1,5 +1,5 @@
 import XCTest
 import SwiftRandomTestSuite
 var tests = [XCTestCaseEntry]()
-tests += SwiftRandomTestSuite.allTests()
+tests += SwiftRandomTests.allTests()
 XCTMain(tests)
