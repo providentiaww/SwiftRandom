@@ -195,6 +195,24 @@ public struct Randoms {
         return URL.random()
     }
 
+
+
+	//==========================================================================================================
+	// MARK: - Random data generators
+	//==========================================================================================================
+
+	public static func randomAlphaNumericString(length: Int) -> String {
+		let allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+		var randomString = ""
+		for _ in 0..<length {
+			let randomNum = Randoms.randomInt(lower: 0, allowedChars.characters.count)
+			let randomIndex = allowedChars.index(allowedChars.startIndex, offsetBy: randomNum)
+			let newCharacter = allowedChars[randomIndex]
+			randomString += String(newCharacter)
+		}
+		return randomString
+	}
+
     //==========================================================================================================
     // MARK: - Fake random data generators
     //==========================================================================================================

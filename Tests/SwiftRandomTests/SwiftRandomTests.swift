@@ -194,6 +194,11 @@ class SwiftRandomTests: XCTestCase {
 		XCTAssert(fakeCurrencies.contains(Randoms.randomCurrency()))
 	}
 
+
+	func testRandomAlphaNumericString() {
+		XCTAssert(Randoms.randomAlphaNumericString(length: 15).characters.count == 15)
+	}
+
 	static var allTests : [(String, (SwiftRandomTests) -> () throws -> Void)] {
 		return [
 			("testBool", testBool),
@@ -220,7 +225,8 @@ class SwiftRandomTests: XCTestCase {
 			("testRandomFakeTag", testRandomFakeTag),
 			("testRandomFakeNameAndEnglishHonorific", testRandomFakeNameAndEnglishHonorific),
 			("testRandomFakeCity", testRandomFakeCity),
-			("testRandomFakeCurrency", testRandomFakeCurrency)
+			("testRandomFakeCurrency", testRandomFakeCurrency),
+			("testRandomAlphaNumericString", testRandomAlphaNumericString)
 		]
 	}
 }
