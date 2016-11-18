@@ -205,7 +205,7 @@ public struct Randoms {
 		let allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 		var randomString = ""
 		for _ in 0..<length {
-			let randomNum = Randoms.randomInt(lower: 0, allowedChars.characters.count)
+			let randomNum = Randoms.randomInt(lower: 1, allowedChars.characters.count)
 			let randomIndex = allowedChars.index(allowedChars.startIndex, offsetBy: randomNum)
 			let newCharacter = allowedChars[randomIndex]
 			randomString += String(newCharacter)
