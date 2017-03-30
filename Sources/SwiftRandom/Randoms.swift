@@ -54,7 +54,7 @@ public extension Double {
     /// SwiftRandom extension
     public static func random(lower: Double = 0, _ upper: Double = 100) -> Double {
 		let rand = URandom()
-        return (abs(Double(rand.int32)) / 0xFFFFFFFF) * (upper - lower) + lower
+        return (Swift.abs(Double(rand.int32)) / 0xFFFFFFFF) * (upper - lower) + lower
     }
 }
 
@@ -62,7 +62,7 @@ public extension Float {
     /// SwiftRandom extension
     public static func random(lower: Float = 0, _ upper: Float = 100) -> Float {
 		let rand = URandom()
-        return (abs(Float(rand.int32)) / 0xFFFFFFFF) * (upper - lower) + lower
+        return (Swift.abs(Float(rand.int32)) / 0xFFFFFFFF) * (upper - lower) + lower
     }
 }
 
