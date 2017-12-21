@@ -163,7 +163,7 @@ class SwiftRandomTests: XCTestCase {
 	}
 	#endif
 	func testRandomFakeName() {
-		XCTAssert(Randoms.randomFakeName().characters.count > 0)
+		XCTAssert(Randoms.randomFakeName().count > 0)
 	}
 
 	func testRandomFakeGender() {
@@ -171,7 +171,7 @@ class SwiftRandomTests: XCTestCase {
 	}
 
 	func testRandomFakeConversation() {
-		XCTAssert(Randoms.randomFakeConversation().characters.count > 0)
+		XCTAssert(Randoms.randomFakeConversation().count > 0)
 	}
 
 	let fakeTitles = ["CEO of Google", "CEO of Facebook", "VP of Marketing @Uber", "Business Developer at IBM", "Jungler @ Fanatic", "B2 Pilot @ USAF", "Student at Stanford", "Student at Harvard", "Mayor of Raccoon City", "CTO @ Umbrella Corporation", "Professor at Pallet Town University"]
@@ -185,10 +185,10 @@ class SwiftRandomTests: XCTestCase {
 		XCTAssert(fakeTags.contains(Randoms.randomFakeTag()))
 	}
 	func testRandomFakeNameAndEnglishHonorific() {
-		XCTAssert(Randoms.randomFakeNameAndEnglishHonorific().characters.count > 0)
+		XCTAssert(Randoms.randomFakeNameAndEnglishHonorific().count > 0)
 	}
 	func testRandomFakeCity() {
-		XCTAssert(Randoms.randomFakeCity().characters.count > 0)
+		XCTAssert(Randoms.randomFakeCity().count > 0)
 	}
 	func testRandomFakeCurrency() {
 		XCTAssert(fakeCurrencies.contains(Randoms.randomCurrency()))
@@ -196,7 +196,7 @@ class SwiftRandomTests: XCTestCase {
 
 
 	func testRandomAlphaNumericString() {
-		XCTAssert(Randoms.randomAlphaNumericString(length: 15).characters.count == 15)
+		XCTAssert(Randoms.randomAlphaNumericString(length: 15).count == 15)
 	}
 
 	static var allTests : [(String, (SwiftRandomTests) -> () throws -> Void)] {
