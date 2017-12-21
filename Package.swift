@@ -1,9 +1,15 @@
-// Generated automatically by Perfect Assistant Application
-// Date: 2016-09-17 01:35:49 +0000
+// swift-tools-version:4.0
 import PackageDescription
 let package = Package(
-    name: "SwiftRandom",
-    targets: [],
-    dependencies: [],
-    exclude: []
+	name: "SwiftRandom",
+	products: [
+		.library(name: "SwiftRandom", targets: ["SwiftRandom"])
+	],
+	dependencies: [
+	],
+	targets: [
+		.target(name: "SwiftRandom", dependencies: []),
+		.testTarget(name: "SwiftRandomTests", dependencies: ["SwiftRandom"])
+	],
+	swiftLanguageVersions: [4]
 )
