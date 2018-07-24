@@ -126,10 +126,11 @@ func asMethods() {
 * Add the following to your `Package.swift` file:
 
 ``` swift
-.Package(
-    url: "https://github.com/iamjono/SwiftRandom.git", 
-    majorVersion: 0, minor: 2
-    ),
+// Swift 3
+.Package(url: "https://github.com/iamjono/SwiftRandom.git", majorVersion: 1)
+    
+// Swift 4
+.package(url: "https://github.com/iamjono/SwiftRandom.git", from: "1.0.0")
 ```
 
 Then, regenerate your Xcode project:
