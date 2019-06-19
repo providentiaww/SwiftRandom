@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 import PackageDescription
 let package = Package(
 	name: "SwiftRandom",
@@ -10,6 +10,5 @@ let package = Package(
 	targets: [
 		.target(name: "SwiftRandom", dependencies: []),
 		.testTarget(name: "SwiftRandomTests", dependencies: ["SwiftRandom"])
-	],
-	swiftLanguageVersions: [4]
+	]
 )
